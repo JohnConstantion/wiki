@@ -1,0 +1,13 @@
+POST http://localhost:8880/get_name
+Content-Type: application/json
+
+{
+  "name": "test"
+}
+
+###
+### hello接口测试
+GET http://localhost:8880/hello
+Accept: application/json
+
+###
