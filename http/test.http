@@ -1,3 +1,15 @@
+GET http://localhost:8880/test/get_all
+Accept: application/json
+
+###
+GET http://localhost:8880/test/get_one?id=1
+Accept: application/json
+
+###
+GET http://localhost:8880/test/insert
+Accept: application/json
+
+###
 POST http://localhost:8880/get_name
 Content-Type: application/json
 
