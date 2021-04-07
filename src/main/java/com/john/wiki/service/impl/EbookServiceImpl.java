@@ -7,10 +7,9 @@ import com.john.wiki.req.EbookReq;
 import com.john.wiki.resp.EbookResp;
 import com.john.wiki.service.EbookService;
 import com.john.wiki.util.CopyUtil;
-import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ObjectUtils;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,7 +27,10 @@ public class EbookServiceImpl implements EbookService {
     public List<EbookResp> getList(EbookReq req) {
         final EbookExample ebookExample = new EbookExample();
         final EbookExample.Criteria criteria = ebookExample.createCriteria();
-        criteria.andNameLike("%" + req.getName() + "%");
+        
+        if (!ObjectUtils.isEmpty(req.getName())) {
+            criteria.andNameLike("%" + req.getName() + "%");
+        }
 
         List<Ebook> ebookList = ebookMapper.selectByExample(ebookExample);
         // 列表复制
