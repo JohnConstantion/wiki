@@ -27,7 +27,7 @@ public class EbookServiceImpl implements EbookService {
     public List<EbookResp> getList(EbookReq req) {
         final EbookExample ebookExample = new EbookExample();
         final EbookExample.Criteria criteria = ebookExample.createCriteria();
-        
+
         if (!ObjectUtils.isEmpty(req.getName())) {
             criteria.andNameLike("%" + req.getName() + "%");
         }
