@@ -83,20 +83,16 @@ export default defineComponent({
   name: 'Home',
   components: {},
   setup() {
-    console.log("setup");
     // 1、ref方法
     const ebook = ref();
     // 2、reactive方法
     const ebook1 = reactive({books: []});
     onMounted(function () {
-      console.log("onMounted2");
       axios.get("/ebook/get_list").then(response => {
 
         const data = response.data;
         ebook.value = data.content;
         ebook1.books = data.content;
-
-        console.log(response)
       });
     });
     return {
