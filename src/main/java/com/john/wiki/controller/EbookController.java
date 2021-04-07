@@ -1,6 +1,5 @@
 package com.john.wiki.controller;
 
-import com.john.wiki.entity.Ebook;
 import com.john.wiki.req.EbookReq;
 import com.john.wiki.resp.CommonResp;
 import com.john.wiki.resp.EbookResp;
